@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #moodForm="ngForm">
+      <div class="form-group">
+        <label for="level">Level</label>
+        <input type="text" [(ngModel)]="mood.level" 
+          class="form-control"
+          id="level"
+          name="level"
+          placeholder="Enter your mood"
+          required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="Comment">Comment</label>
+        <input type="text" [(ngModel)]="mood.comment" 
+          class="form-control"
+          id="comment"
+          name="comment"
+          placeholder="Enter your comment"
+          required #email="ngModel">
+      </div>
+      <button type="submit" [disabled]="!moodForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Level</th>
+          <th scope="col">Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mood of moods">
+          <td>{{ mood.id }}</td>
+          <td>{{ mood.level }}</td>
+          <td>{{ mood.comment }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
