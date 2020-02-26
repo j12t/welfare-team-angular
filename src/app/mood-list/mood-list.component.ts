@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Mood } from '../model/mood';
-import { Page } from '../model/page';
 import { MoodService } from '../service/mood-service.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { MoodService } from '../service/mood-service.service';
 })
 export class MoodListComponent implements OnInit {
 
-//  moods: Page<Mood>;
   moods: Mood[];
 
   constructor(private moodService: MoodService) {
