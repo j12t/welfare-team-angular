@@ -6,13 +6,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MoodListComponent } from './mood-list/mood-list.component';
 import { MoodFormComponent } from './mood-form/mood-form.component';
-import { MoodService } from './service/mood-service.service';
+import { MoodService } from './service/mood.service';
+import { AppService } from './app.service';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './service/auth.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './service/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoodListComponent,
-    MoodFormComponent
+    MoodFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +26,16 @@ import { MoodService } from './service/mood-service.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [MoodService],
+  providers: [
+    AppService, 
+    MoodService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

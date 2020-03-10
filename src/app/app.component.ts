@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title: string;
+  authenticated = false;
 
-  constructor() {
+  constructor(private app: AppService) {
     this.title = 'Welfare Team - Mood Reporting';
+    this.authenticated = this.app.authenticated;
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Mood } from '../model/mood';
-import { MoodService } from '../service/mood-service.service';
+import { MoodService } from '../service/mood.service';
 
 @Component({
   selector: 'app-mood-list',
